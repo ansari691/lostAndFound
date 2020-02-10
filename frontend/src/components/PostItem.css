@@ -1,0 +1,41 @@
+.ad-image{
+    flex : 1 1 480px;
+    flex-wrap : wrap;
+    margin-left : 20px;
+}
+
+.ad-postedby{
+    flex : 0 1 200px;
+    flex-wrap : wrap;
+}
+
+.testing{
+    margin : 150px 0px;
+}
+
+@media (max-width : 992px){
+    .ad-item{
+        flex-direction: column;
+    }
+    .ad-image{
+        margin-bottom: 20px;
+    }
+    .testing{
+        margin : 50px 0px;
+    }
+}
+
+@media (max-width : 575px){
+    #target-image{
+        height : auto;
+    }
+    .ad-image{
+        flex-basis : 200px;
+    }
+    .ad-postedby{
+        flex-basis : 100px;
+    }
+    .testing{
+        margin : 25px 0px;
+    }
+}

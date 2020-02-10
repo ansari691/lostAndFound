@@ -1,0 +1,19 @@
+.landing-works{
+    margin: auto;
+}
+
+.landing-works>p{
+    font-size: 1.2em;
+}
+
+@media (max-width : 575px) {
+    .landing-works>img{
+        width : 150px;
+        height : 150px;
+    }
+    .landing-works>p{
+        font-size: 20px;
+    }
+}
+
+

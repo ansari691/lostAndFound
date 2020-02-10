@@ -1,0 +1,10 @@
+.post-list{
+        display: flex;
+        flex-wrap: wrap;
+}
+
+@media (width : 575px){
+    .post-list{
+        justify-content: center;
+    }
+}

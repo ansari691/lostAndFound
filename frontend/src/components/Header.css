@@ -1,0 +1,36 @@
+.header-white, .header-black{
+    padding : 10px;
+    font-size: 18px;
+    background-color: whitesmoke;
+    display : flex;
+    align-items: center;
+    width: 100%;
+    justify-content: flex-end;
+}
+
+.header-black{
+    background-color: black;
+}
+
+.header-white>a, .header-black>a{
+    text-decoration: none;
+    color : black;
+    margin-right: 1rem;
+}
+
+.header-black>a{
+    color : white;
+}
+
+@media (max-width : 575px ) {
+    .header-black, .header-white{
+        font-size: 25px;
+    }
+    .header-white>a, .header-black>a{
+        margin-right: 1rem;
+    }
+    #hide{
+        display: none;
+    }
+}
+

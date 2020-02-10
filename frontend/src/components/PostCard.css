@@ -1,0 +1,13 @@
+@media (max-width : 575px){
+    .post-card{
+        text-align: center;
+        
+    }
+    .post-card>img{
+        max-width : 100%;
+        height: auto;
+    }
+}
+
+
+
