@@ -56,7 +56,7 @@ const Header = ({
 
   return (
     <nav
-      className="d-flex justify-content-between"
+      className="d-flex justify-content-between mb-5"
       // style={
       //   darkMode
       //     ? { backgroundColor: "black", height : "100px" }

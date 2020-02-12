@@ -25,7 +25,7 @@ const PostItem = ({
   }
 
   return (
-    <div>
+    <div className="px-5">
       <div className="d-flex ad-item justify-content-between mb-5 border p-sm-5">
         <div className="ad-postedby border text-center">
           <div className="testing">
@@ -37,10 +37,9 @@ const PostItem = ({
         </div>
         <div className="text-center border px-2 ad-image">
           <img
-            className="mw-100 mx-auto d-block my-3 p-2"
+            className="mw-100 mx-auto d-block my-3"
             id="target-image"
             src={`http://localhost:5000/${post.image}`}
-            width="450"
             height="350"
             alt="post-item"
           />
@@ -54,23 +53,23 @@ const PostItem = ({
         <p className="text-justify">{post.description}</p>
       </div>
 
-      <div>
+      <div className="px-auto">
         {post.user === post.requestor ? (
           <button
             onClick={() => {
               deleteAd(post._id);
             }}
-            className="btn btn-md btn-danger w-100"
+            className="btn btn-md btn-danger w-50"
           >
             Delete
           </button>
         ) : (
           <div className="text-right mt-5">
             <a href={`tel:${post.phone}`}>
-              <button className="btn btn btn-success mr-2">Call</button>
+              <button className="btn btn-lg btn-success mr-2">Call</button>
             </a>
             <a href={`mailto:${post.email}`}>
-              <button className="btn btn btn-success">Mail</button>
+              <button className="btn btn-lg btn-success">Mail</button>
             </a>
           </div>
         )}

@@ -22,8 +22,7 @@ const PostList = ({ posts, getAllAds, user, darkMode }) => {
         location={post.location}
         id={post._id}
         image={post.image}
-        date = {post.date}
-
+        date = {post.date} 
       />
     );
   });
@@ -32,9 +31,9 @@ const PostList = ({ posts, getAllAds, user, darkMode }) => {
   const empty = <div>No posts available currently</div>;
 
 return (
-  <div>
+  <div className="text-center">
     <h6 className="text-right">Welcome, {user.name}!</h6>
-    <div className="post-list">{posts.length > 0 ? list : empty}</div>
+    <div className="post-list row">{posts.length > 0 ? list : empty}</div>
   </div>
   
 );
