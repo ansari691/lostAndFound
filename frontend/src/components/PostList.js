@@ -33,7 +33,7 @@ const PostList = ({ posts, getAllAds, user, darkMode }) => {
 return (
   <div className="text-center">
     <h6 className="text-right">Welcome, {user.name}!</h6>
-    <div className="post-list row">{posts.length > 0 ? list : empty}</div>
+    <div className="post-list row m-5">{posts.length > 0 ? list : empty}</div>
   </div>
   
 );

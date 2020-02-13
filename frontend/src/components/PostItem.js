@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React, { useEffect, Fragment } from "react";
 import PropTypes from "prop-types";
 import { connect } from "react-redux";
 import { Redirect } from "react-router-dom";
@@ -53,26 +53,52 @@ const PostItem = ({
         <p className="text-justify">{post.description}</p>
       </div>
 
-      <div className="px-auto">
+      <div className="text-right">
         {post.user === post.requestor ? (
-          <button
-            onClick={() => {
-              deleteAd(post._id);
-            }}
-            className="btn btn-md btn-danger w-50"
-          >
-            Delete
-          </button>
+          // <button
+          //   onClick={() => {
+          //     deleteAd(post._id);
+          //   }}
+          //   className="btn btn-md btn-danger"
+          // >
+          //   Delete
+          // </button>
+          <Fragment>
+            <button type="button" className="btn btn-log btn-danger" data-toggle="modal" data-target="#staticBackdrop">
+              Delete
+</button>
+
+            <div class="modal fade" id="staticBackdrop" data-backdrop="static" tabindex="-1" role="dialog" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+              <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                  <div class="modal-header">
+                    <h5 class="modal-title" id="staticBackdropLabel">Modal title</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                      <span aria-hidden="true">&times;</span>
+                    </button>
+                  </div>
+                  <div class="modal-body text-danger text-center">
+                    Beware! The change is irreversable, your post would be deleted permanently
+                  </div>
+                  <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                    <button type="button" onClick={() => { deleteAd(post._id) }} class="btn btn-danger">Confirm Delete</button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </Fragment>
+
         ) : (
-          <div className="text-right mt-5">
-            <a href={`tel:${post.phone}`}>
-              <button className="btn btn-lg btn-success mr-2">Call</button>
-            </a>
-            <a href={`mailto:${post.email}`}>
-              <button className="btn btn-lg btn-success">Mail</button>
-            </a>
-          </div>
-        )}
+            <div className="text-right mt-5">
+              <a href={`tel:${post.phone}`}>
+                <button className="btn btn-lg btn-success mr-2">Call</button>
+              </a>
+              <a href={`mailto:${post.email}`}>
+                <button className="btn btn-lg btn-success">Mail</button>
+              </a>
+            </div>
+          )}
       </div>
     </div>
   );
