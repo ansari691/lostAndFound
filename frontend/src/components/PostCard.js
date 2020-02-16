@@ -26,7 +26,7 @@ const PostCard = ({ title, location, image, id, date, darkMode }) => {
   ];
 
   return (
-    <div className="post-card col-sm-3 mb-3">
+    <div className="post-card col-sm-6 col-md-4 col-lg-3  mb-3">
       <Link
         to={{
           pathname: "/postItem",
