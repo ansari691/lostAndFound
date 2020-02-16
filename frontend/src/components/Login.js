@@ -7,7 +7,7 @@ import { MdTrendingFlat } from 'react-icons/md';
 
 
 
-const Login = ({ login, isAuthenticated }) => {
+const Login = ({ login, isAuthenticated }) => { 
 
 
   const [ loginFormData, setLoginFormData ] = useState({
@@ -31,7 +31,7 @@ const Login = ({ login, isAuthenticated }) => {
   }
   
   return (
-    <div style={{ marginBottom : "100px"}} className="mt-3 border shadow-lg">
+    <div style={{ marginBottom : "100px"}} className="forms m-auto border shadow-lg">
         <h3 className="text-center"> <MdTrendingFlat />Login</h3>
       <form className="px-5 py-3" onSubmit={e => onSubmit(e)}>
         <div className="form-group">

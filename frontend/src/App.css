@@ -9,3 +9,19 @@
         font-size: 18px;
     }
 }
+
+.forms{
+    width : 600px;
+}
+
+@media (max-width : 768px){
+    .forms{
+        width : 450px;
+    }
+}
+
+@media (max-width : 575px){
+    .forms{
+        width : 300px;
+    }
+}

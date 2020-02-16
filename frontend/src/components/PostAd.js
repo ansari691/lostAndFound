@@ -57,7 +57,7 @@ const PostAd = ( { postAd } ) => {
 
 
   return (
-    <div className="m-auto border shadow-lg " style={{width : "600px"}}>
+    <div className="m-auto border shadow-lg froms " style={{width : "600px"}}>
         <h4 className='text-center'><MdAddAPhoto/> Post an Ad</h4>
         {/* <form encType='multipart/form-data'>
         <input

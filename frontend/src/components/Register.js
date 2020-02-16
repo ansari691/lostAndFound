@@ -4,6 +4,7 @@ import PropTypes from 'prop-types';
 import { MdAccountBox} from 'react-icons/md';
 
 
+import "./Register.css";
 import { setAlert } from '../actions/alert';
 import { register } from '../actions/auth' 
 
@@ -32,7 +33,7 @@ const Register = ( {setAlert ,register, isAuthenticated } )  => {
 
 
   return (
-    <div className="mt-3 border shadow-lg">
+    <div className="forms mt-3 border shadow-lg m-auto">
         <h4 className='text-center'><MdAccountBox /> Register</h4>
       <form className="px-5 py-3" onSubmit={e => onSubmit(e)}>
         <div className="form-group">

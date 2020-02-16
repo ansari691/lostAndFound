@@ -31,14 +31,14 @@ const Profile = ({ user, updateUser, loadUser }) => {
   // },[])
 
   return (
-    <div className="m-auto border shadow-lg" style={{width : "600px"}}>
+    <div className="m-auto border shadow-lg forms">
       <h4 className="text-center">
         <MdAccountBox /> Update Profile
       </h4>
       <form className="px-5 py-3" onSubmit={e => onSubmit(e)}>
         <div className="form-group">
           <label htmlFor="name">Name</label>
-          <input
+          <input 
             type="text"
             className="form-control"
             name="name"

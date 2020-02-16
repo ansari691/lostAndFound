@@ -7,9 +7,15 @@ const Alert = ({ alerts }) => {
     alerts !== null &&
     alerts.length > 0 &&
     alerts.map(alert => (
-      <div key={alert.id} className={`alert alert-${alert.alertType}`}>
+      <div key={alert.id} className={`alert alert-${alert.alertType} alert-dismissable`}>
         {alert.msg}
       </div>
+      // <div class="alert alert-warning alert-dismissible fade show" role="alert">
+      //   <strong>{alert.msg}</strong> You should check in on some of those fields below.
+      //   <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+      //     <span aria-hidden="true">&times;</span>
+      //   </button>
+      // </div>
     ))
   );
 };
