@@ -64,8 +64,6 @@ router.post('/', upload ,[ auth,
         });
 
         const post = await newPost.save();
-        
-        console.log(post)
         res.json(post);
     } catch (err) {
         console.error(err.message);
@@ -96,7 +94,6 @@ router.get('/:id', auth, async (req, res) => {
         post.requestor = req.user.id
 
         res.json(post);
-        console.log(post);
     } catch (err) {
         console.error(err.message);
         res.status(500).send('server error');
