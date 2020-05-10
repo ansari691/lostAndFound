@@ -77,8 +77,6 @@ router.put('/',auth, async (req,res) => {
         console.log(err);
     }
     
-    
-
     await user.save();
 
     res.json(user);
