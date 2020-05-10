@@ -99,7 +99,7 @@ function App() {
 
           <Footer darkMode={darkMode} blackAndWhite={blackAndWhite} />
         </div>
-      </Router>
+      </Router> 
     </Provider>
   );
 }

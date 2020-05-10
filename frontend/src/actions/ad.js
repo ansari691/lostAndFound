@@ -13,14 +13,6 @@ import { setAlert } from "../actions/alert";
 
 //POSTING AN AD
 export const postAd = fd => async dispatch => {
-  // const config = {
-  //     headers : {
-  //         'Content-Type' : 'application/json'
-  //     }
-  // }
-
-  // const body = JSON.stringify({ title, location, description });
-
   try {
     const res = await axios.post("http://localhost:5000/api/postAd", fd); //body ,config);
 
@@ -32,9 +24,6 @@ export const postAd = fd => async dispatch => {
     console.log(fd);
 
     dispatch(setAlert("Ad posted successfully", "success"));
-    // setTimeout(() => {
-    //     return "location.reload(true);";
-    // }, 1000);
     setTimeout("location.reload(true);", 1000)
   } catch (err) {
     const errors = err.response.data.errors;

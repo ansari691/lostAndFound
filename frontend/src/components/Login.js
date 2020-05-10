@@ -7,7 +7,7 @@ import { MdTrendingFlat } from 'react-icons/md';
 
 
 
-const Login = ({ login, isAuthenticated }) => { 
+const Login = ({ login, isAuthenticated }) => {  
 
 
   const [ loginFormData, setLoginFormData ] = useState({

@@ -51,7 +51,7 @@ const PostCard = ({ title, location, image, id, date, darkMode }) => {
           <div className="text-left">
             <h2>{title}</h2>
             <p className="mb-3">{location}</p>
-            <h6><small class="text-muted">
+            <h6><small className="text-muted">
               {postDate.toString().slice(0, 10) ==
                 currentDate.toString().slice(0, 10)
                 ? "TODAY"

@@ -57,11 +57,6 @@ const Header = ({
   return (
     <nav
       className="d-flex justify-content-between mb-5"
-      // style={
-      //   darkMode
-      //     ? { backgroundColor: "black", height : "100px" }
-      //     : { backgroundColor: "whitesmoke", height : "100px"}
-      // }
     >
       <Link to={isAuthenticated ? "/postList" : "/"} className="m-auto">
         <img

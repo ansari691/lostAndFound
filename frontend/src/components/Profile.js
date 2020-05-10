@@ -6,7 +6,6 @@ import { MdAccountBox } from "react-icons/md";
 import { updateUser, loadUser } from "../actions/auth";
 
 const Profile = ({ user, updateUser, loadUser }) => {
-  console.log(user);
 
   const [UpdateForm, setUpdateForm] = useState({
     name: user.name,
@@ -26,10 +25,6 @@ const Profile = ({ user, updateUser, loadUser }) => {
     updateUser(name, phone, email, password);
   };
 
-  // useEffect(() => {
-  //    loadUser();
-  // },[])
-
   return (
     <div className="m-auto border shadow-lg forms">
       <h4 className="text-center">
@@ -43,7 +38,7 @@ const Profile = ({ user, updateUser, loadUser }) => {
             className="form-control"
             name="name"
             placeholder="Enter your name"
-            value={name}
+            value={user.name}
             onChange={e => onChange(e)}
           />
         </div>
@@ -54,7 +49,7 @@ const Profile = ({ user, updateUser, loadUser }) => {
             className="form-control"
             name="email"
             placeholder="Enter email"
-            value={email}
+            value={user.email}
             onChange={e => onChange(e)}
           />
         </div>
@@ -65,7 +60,7 @@ const Profile = ({ user, updateUser, loadUser }) => {
             className="form-control"
             name="phone"
             placeholder="Enter 10 digit mobile number"
-            value={phone}
+            value={user.phone}
             onChange={e => onChange(e)}
           />
         </div>

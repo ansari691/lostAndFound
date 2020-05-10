@@ -55,34 +55,27 @@ const PostItem = ({
 
       <div className="text-right">
         {post.user === post.requestor ? (
-          // <button
-          //   onClick={() => {
-          //     deleteAd(post._id);
-          //   }}
-          //   className="btn btn-md btn-danger"
-          // >
-          //   Delete
-          // </button>
+          
           <Fragment>
             <button type="button" className="btn btn-log btn-danger" data-toggle="modal" data-target="#staticBackdrop">
               Delete
 </button>
 
-            <div class="modal fade" id="staticBackdrop" data-backdrop="static" tabindex="-1" role="dialog" aria-labelledby="staticBackdropLabel" aria-hidden="true">
-              <div class="modal-dialog" role="document">
-                <div class="modal-content">
-                  <div class="modal-header">
-                    <h5 class="modal-title" id="staticBackdropLabel">Modal title</h5>
-                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <div className="modal fade" id="staticBackdrop" data-backdrop="static" tabindex="-1" role="dialog" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+              <div className="modal-dialog" role="document">
+                <div className="modal-content">
+                  <div className="modal-header">
+                    <h5 className="modal-title" id="staticBackdropLabel">Modal title</h5>
+                    <button type="button" className="close" data-dismiss="modal" aria-label="Close">
                       <span aria-hidden="true">&times;</span>
                     </button>
                   </div>
-                  <div class="modal-body text-danger text-center">
+                  <div className="modal-body text-danger text-center">
                     Beware! The change is irreversable, your post would be deleted permanently
                   </div>
-                  <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                    <button type="button" onClick={() => { deleteAd(post._id) }} class="btn btn-danger">Confirm Delete</button>
+                  <div className="modal-footer">
+                    <button type="button" className="btn btn-secondary" data-dismiss="modal">Close</button>
+                    <button type="button" onClick={() => { deleteAd(post._id) }} className="btn btn-danger">Confirm Delete</button>
                   </div>
                 </div>
               </div>

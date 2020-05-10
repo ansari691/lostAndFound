@@ -4,14 +4,14 @@ const initialState = {
     token : localStorage.getItem('token'),
     isAuthenticated : false,
     loading : true,
-    user : []
+    user : {}
 }
 
 export default function ( state = initialState, action ) {
 
     const { type, payload } = action;
 
-    switch(type){
+    switch(type){ 
 
         case USER_LOADED:
         case UPDATE_USER: 
