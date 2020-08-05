@@ -39,10 +39,10 @@ export const postAd = fd => async dispatch => {
 };
 
 //getting all ads
-export const getAllAds = () => async dispatch => {
+export const getAllAds = (perPage, pageNumber) => async dispatch => {
   try {
-    const res = await axios.get("http://localhost:5000/api/postAd");
-
+    const res = await axios.get(`http://localhost:5000/api/posts?pagination=${perPage}&page=${pageNumber}`);
+    console.log(res.data);
     dispatch({
       type: GET_AD,
       payload: res.data
@@ -66,7 +66,7 @@ export const getAllAds = () => async dispatch => {
 //getting ad by id
 export const getAdById = id => async dispatch => {
   try {
-    const res = await axios.get(`http://localhost:5000/api/postAd/${id}`);
+    const res = await axios.get(`http://localhost:5000/api/posts/${id}`);
 
     dispatch({
       type: GET_AD_BY_ID,
@@ -90,7 +90,7 @@ export const clearAd = () => dispatch => {
 
 export const deleteAd = id => async dispatch => {
 
-  await axios.delete(`http://localhost:5000/api/postAd/${id}`);
+  await axios.delete(`http://localhost:5000/api/posts/${id}`);
 
   dispatch({
     type: DELETE_AD

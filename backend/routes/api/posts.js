@@ -4,7 +4,7 @@ const multer = require("multer");
 
 const auth = require("../../middleware/auth");
 const User = require("../../models/User");
-const Post = require("../../models/PostAd");
+const Post = require("../../models/Post");
 
 const router = express.Router();
 
@@ -64,41 +64,24 @@ router.get("/", auth, async (req, res) => {
 
     const page = req.query.page ? parseInt(req.query.page) : 1;
 
-    const totalPosts = await Post.count();
+    const totalPosts = await Post.estimatedDocumentCount();
 
     totalPosts % pagination == 0
       ? (pages = totalPosts / pagination)
       : (pages = totalPosts / pagination + 1);
 
     const posts = await Post.find()
+      .sort({ date: -1 })
       .skip((page - 1) * pagination)
       .limit(pagination)
-      .sort({ date: -1 });
-    res.json(posts);
+      
+    res.json({posts,pages : parseInt(pages)});
   } catch (err) {
     console.error(err.message);
     res.status(500).send("server error");
   }
 });
 
-//get total pages
-router.get("/pageCount", async (req, res) => {
-  try {
-    const pagination = req.query.pagination
-      ? parseInt(req.query.pagination)
-      : 12;
-
-    const totalPosts = await Post.count();
-
-    totalPosts % pagination == 0
-      ? (pages = totalPosts / pagination)
-      : (pages = totalPosts / pagination + 1);
-
-    res.json(parseInt(pages));
-  } catch (err) {
-    res.status(500).send("server error");
-  }
-});
 
 //getting post by id
 router.get("/:id", auth, async (req, res) => {
@@ -111,10 +94,25 @@ router.get("/:id", auth, async (req, res) => {
 
     res.json(post);
   } catch (err) {
-    console.error(err.message);
     res.status(500).send("server error");
   }
 });
+
+
+//getting all posts of a user
+router.get("/user/:id", auth, async (req, res) => {
+  try {
+    const post = await Post.find({ user : req.user.id });
+
+    if (!post) return res.status(404).json({ msg: "no posts found" });
+
+    post.requestor = req.user.id;
+
+    res.json(post);
+  } catch (err) {
+    res.status(500).send("server error");
+  }
+})
 
 //delete post by id
 router.delete("/:id", auth, async (req, res) => {

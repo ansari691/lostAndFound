@@ -31,45 +31,9 @@ const PostAd = ( { postAd } ) => {
     postAd(fd);
   }
 
-  // const onClick = e => {
-  //   setPostForm({ ...postForm, image : e.target.files[0]}); 
-  //   console.log(image);
-  // }
-
-  // const onUpload = async () => {
-
-  //   console.log('entered on upload');
-  //   const fd = new FormData();
-  //   fd.append('image', image);
-
-  //   console.log(fd);
-
-  //   try {
-  //    const res = await axios.post('http://localhost:5000/api/postAd/upload', fd);
-     
-  //    console.log(res.statusText);
-  //    console.log('image uploaded successfully');
-  //   } catch (err) {
-  //     console.log(err);
-  //   }
-  // }
-
-
-
   return (
     <div className="m-auto border shadow-lg forms ">
         <h4 className='text-center'><MdAddAPhoto/> Post an Ad</h4>
-        {/* <form encType='multipart/form-data'>
-        <input
-            type="file"
-            className="form-control"
-            id="image"
-            placeholder="upload photo"
-            name="image"
-            onChange={e => onClick(e)}
-          />
-          <button onClick={() => onUpload()}>upload</button>
-        </form> */}
         
       <form className="py-2 px-5" onSubmit={e => onSubmit(e)} encType="multipart/form-data">
         <div className="form-group">

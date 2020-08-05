@@ -52,7 +52,7 @@ const PostItem = ({
         <h3>Description</h3>
         <p className="text-justify">{post.description}</p>
       </div>
-
+      {console.log(post)}
       <div className="text-right">
         {post.user === post.requestor ? (
           

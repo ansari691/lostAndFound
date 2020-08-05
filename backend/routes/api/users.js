@@ -61,7 +61,7 @@ router.post('/', [
 //updating a user
 router.put('/',auth, async (req,res) => {
     const user = await User.findById(req.user.id);
-
+    console.log(req.user.id);
     const { name, phone, email, password } = req.body;
 
     user.name = name;
@@ -80,6 +80,12 @@ router.put('/',auth, async (req,res) => {
     await user.save();
 
     res.json(user);
+});
+
+//getting all users
+router.get('/', async (req, res) => {
+    const users = await User.find();
+    return res.json(users);
 });
 
 module.exports = router;

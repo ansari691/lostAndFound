@@ -14,7 +14,8 @@ const initialState = {
   post: [],
   loading: true,
   posts: [],
-  deleted : false
+  deleted : false,
+  pages : 0
 };
 
 export default function(state = initialState, action) {
@@ -25,7 +26,8 @@ export default function(state = initialState, action) {
     case GET_AD:
       return {
         ...state,
-        posts: payload,
+        posts: payload.posts,
+        pages: payload.pages,
         loading: false
       };
 

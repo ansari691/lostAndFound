@@ -22,7 +22,7 @@ app.use((req, res, next) => {
 
 app.use('/api/users', require('./routes/api/users'));
 app.use('/api/auth', require('./routes/api/auth'));
-app.use('/api/postAd', require('./routes/api/postAd'));
+app.use('/api/posts', require('./routes/api/posts'));
 
 
 connectDB();

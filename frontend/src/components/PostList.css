@@ -1,9 +1,9 @@
-.post-list{
-        
+.category-list li{
+    margin-right: 50px;
+    flex : 1
 }
 
-@media (max-width : 575px){
-    .post-list{
-        
-    }
+#banner-image{
+    max-height: 250px;
+    padding : 0px 100px;
 }

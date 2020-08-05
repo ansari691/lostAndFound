@@ -4,6 +4,7 @@ import PropTypes from 'prop-types';
 import { login } from '../actions/auth';
 import { Redirect } from "react-router-dom";
 import { MdTrendingFlat } from 'react-icons/md';
+import { setAlert } from "../actions/alert";
 
 
 

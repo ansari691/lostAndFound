@@ -26,7 +26,7 @@ if (localStorage.token) {
 function App() {
   const [darkMode, setdarkMode] = useState(false);
   const [blackAndWhite, setblackAndWhite] = useState(false);
-  const [theme, settheme] = useState(false);
+  const [theme, setTheme] = useState(false);
 
   useEffect(() => {
     store.dispatch(loadUser());
@@ -35,7 +35,7 @@ function App() {
   const themeButton = (
     <Fragment>
       <div className="text-right">
-        <button onClick={() => settheme(!theme)} className="btn btn-info">
+        <button onClick={() => setTheme(!theme)} className="btn btn-info">
           Themes
         </button>
       </div>
