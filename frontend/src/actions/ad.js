@@ -14,7 +14,7 @@ import { setAlert } from "../actions/alert";
 //POSTING AN AD
 export const postAd = fd => async dispatch => {
   try {
-    const res = await axios.post("http://localhost:5000/api/postAd", fd); //body ,config);
+    const res = await axios.post("http://localhost:5000/api/posts", fd); //body ,config);
 
     dispatch({
       type: POST_AD_SUCCESS,
@@ -26,6 +26,7 @@ export const postAd = fd => async dispatch => {
     dispatch(setAlert("Ad posted successfully", "success"));
     setTimeout("location.reload(true);", 1000)
   } catch (err) {
+    console.log(err.message);
     const errors = err.response.data.errors;
     console.log(err);
 
