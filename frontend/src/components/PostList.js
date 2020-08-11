@@ -55,9 +55,9 @@ const PostList = ({ posts, pages, getAllAds, user, darkMode }) => {
         })}
       </ul>
       <h6 className="text-right">Welcome, {user.name}!</h6>
-      <div style={{backgroundColor : "#5cc7cd"}}>
+      <div style={{backgroundImage : "linear-gradient(to right ,#00aa13 50%, #1c1d1d 50%)"}}>
         <img
-          src={require("../images/blog-banner-lost-and-found_1.png")}
+          src={require("../images/Lostfound-blog-banner.png")}
           alt="banner-image"
           width="100%"
           id="banner-image"
