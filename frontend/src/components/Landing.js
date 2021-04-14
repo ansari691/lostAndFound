@@ -17,12 +17,12 @@ const Landing = ({auth : {isAuthenticated} , clearAd }) => {
   return (
     <div className="landing-hero">
       <div className="text-center border rounded p-sm-5 py-2">
-        <h1>Extend a helping hand, Start a revolution</h1>
+        <h1>Extend a helping hand, Start a revolution.</h1>
         <h4>Restoring the faith in humanity</h4>
         <p className="mt-5">No more searching, No more worries <br/> Post ad and relax</p>
 
         <Link to="/register">
-          <button className="btn btn-info btn-lg">Start Here</button>
+          <button className="btn btn-info btn-lg">Start Now</button>
         </Link>
       </div>
 
