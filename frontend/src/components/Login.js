@@ -32,7 +32,7 @@ const Login = ({ login, isAuthenticated }) => {
   }
   
   return (
-    <div style={{ marginBottom : "100px"}} className="forms m-auto border shadow-lg">
+    <div style={{ marginBottom : "230px"}} className="forms mx-auto border shadow-lg">
         <h3 className="text-center"> <MdTrendingFlat />Login</h3>
       <form className="px-5 py-3" onSubmit={e => onSubmit(e)}>
         <div className="form-group">
