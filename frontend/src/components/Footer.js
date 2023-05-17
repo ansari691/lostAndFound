@@ -32,7 +32,7 @@ const Footer = ({ darkMode, blackAndWhite }) => {
       </a>
       <p>29 Vakil Manzil, Amina Compound, Dhamankar Naka Bhiwandi -421302</p>
       <span>
-        Made with <MdFavorite /> by Ibrahim
+        Made with <MdFavorite /> by Saif
       </span>
       <p className="mt-3 mb-0">Lost And Found &copy;2020</p>
     </div>
