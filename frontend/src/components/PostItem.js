@@ -11,7 +11,7 @@ const PostItem = ({
   getAdById,
   deleteAd,
   ad: { post, loading, deleted },
-  location
+  location,
 }) => {
   const { id } = location.state;
 
@@ -55,43 +55,76 @@ const PostItem = ({
       {console.log(post)}
       <div className="text-right">
         {post.user === post.requestor ? (
-          
           <Fragment>
-            <button type="button" className="btn btn-log btn-danger" data-toggle="modal" data-target="#staticBackdrop">
+            <button
+              type="button"
+              className="btn btn-log btn-danger"
+              data-toggle="modal"
+              data-target="#staticBackdrop"
+            >
               Delete
-</button>
+            </button>
 
-            <div className="modal fade" id="staticBackdrop" data-backdrop="static" tabindex="-1" role="dialog" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+            <div
+              className="modal fade"
+              id="staticBackdrop"
+              data-backdrop="static"
+              tabindex="-1"
+              role="dialog"
+              aria-labelledby="staticBackdropLabel"
+              aria-hidden="true"
+            >
               <div className="modal-dialog" role="document">
                 <div className="modal-content">
                   <div className="modal-header">
-                    <h5 className="modal-title" id="staticBackdropLabel">Modal title</h5>
-                    <button type="button" className="close" data-dismiss="modal" aria-label="Close">
+                    <h5 className="modal-title" id="staticBackdropLabel">
+                      Modal title
+                    </h5>
+                    <button
+                      type="button"
+                      className="close"
+                      data-dismiss="modal"
+                      aria-label="Close"
+                    >
                       <span aria-hidden="true">&times;</span>
                     </button>
                   </div>
                   <div className="modal-body text-danger text-center">
-                    Beware! The change is irreversable, your post would be deleted permanently
+                    Beware! The change is irreversable, your post would be
+                    deleted permanently
                   </div>
                   <div className="modal-footer">
-                    <button type="button" className="btn btn-secondary" data-dismiss="modal">Close</button>
-                    <button type="button" onClick={() => { deleteAd(post._id) }} className="btn btn-danger">Confirm Delete</button>
+                    <button
+                      type="button"
+                      className="btn btn-secondary"
+                      data-dismiss="modal"
+                    >
+                      Close
+                    </button>
+                    <button
+                      type="button"
+                      onClick={() => {
+                        deleteAd(post._id);
+                      }}
+                      className="btn btn-danger"
+                    >
+                      Confirm Delete
+                    </button>
                   </div>
                 </div>
               </div>
             </div>
           </Fragment>
-
         ) : (
-            <div className="text-right mt-5">
-              <a href={`tel:${post.phone}`}>
-                <button className="btn btn-lg btn-success mr-2">Call</button>
-              </a>
-              <a href={`mailto:${post.email}`}>
-                <button className="btn btn-lg btn-success">Mail</button>
-              </a>
-            </div>
-          )}
+          <div className="text-right mt-5">
+            <a href={`tel:${post.phone}`}>
+              <button className="btn btn-lg btn-success mr-2">Call</button>
+            </a>
+            <a href={`mailto:${post.email}`}>
+              <button className="btn btn-lg btn-success">Mail</button>
+            </a>
+          </div>
+        )}
       </div>
     </div>
   );
@@ -100,11 +133,11 @@ const PostItem = ({
 PostItem.propTypes = {
   getAdById: PropTypes.func.isRequired,
   deleteAd: PropTypes.func.isRequired,
-  ad: PropTypes.object.isRequired
+  ad: PropTypes.object.isRequired,
 };
 
-const mapStateToProps = state => ({
-  ad: state.ad
+const mapStateToProps = (state) => ({
+  ad: state.ad,
 });
 
 export default connect(mapStateToProps, { getAdById, deleteAd })(PostItem);
